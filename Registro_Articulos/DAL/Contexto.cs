@@ -12,6 +12,8 @@ namespace Registro_Articulos.DAL
         {
             base.OnConfiguring(optionsBuilder);
 
+
+
             optionsBuilder.UseSqlite(@"Data Source=Data\Productos.db");
         }
     }
