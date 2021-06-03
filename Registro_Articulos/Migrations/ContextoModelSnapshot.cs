@@ -31,9 +31,6 @@ namespace Registro_Articulos.Migrations
                     b.Property<double>("Existencia")
                         .HasColumnType("REAL");
 
-                    b.Property<double>("ValorInventario")
-                        .HasColumnType("REAL");
-
                     b.HasKey("ProductoId");
 
                     b.ToTable("Productos");

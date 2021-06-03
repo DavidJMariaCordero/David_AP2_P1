@@ -8,7 +8,7 @@ using Registro_Articulos.DAL;
 namespace Registro_Articulos.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210602233220_Inicial")]
+    [Migration("20210603004128_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,9 +31,6 @@ namespace Registro_Articulos.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Existencia")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("ValorInventario")
                         .HasColumnType("REAL");
 
                     b.HasKey("ProductoId");

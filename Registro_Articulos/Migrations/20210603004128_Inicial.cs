@@ -14,8 +14,7 @@ namespace Registro_Articulos.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(type: "TEXT", nullable: false),
                     Existencia = table.Column<double>(type: "REAL", nullable: false),
-                    Costo = table.Column<double>(type: "REAL", nullable: false),
-                    ValorInventario = table.Column<double>(type: "REAL", nullable: false)
+                    Costo = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
