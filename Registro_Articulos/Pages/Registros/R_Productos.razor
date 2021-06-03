@@ -53,8 +53,7 @@
                 <div class="form-group">
                     <label>Valor Inventario</label>
                     <div class="input-group">
-                        <InputNumber @bind-Value="Producto.ValorInventario" class="form-control" readOnly="true"/>
-                        <ValidationMessage For="@(() => Producto.ValorInventario)" />
+                        <InputNumber @bind-Value="ValorInventario" class="form-control" readOnly="true"/>
                     </div>
                 </div>
 
@@ -87,6 +86,7 @@
     public int ProductoId { get; set; }
 
     private Productos Producto = new Productos();
+    private double ValorInventario;
 
     protected override void OnInitialized()
     {
@@ -97,20 +97,26 @@
     private void Limpiar()
     {
         Producto = new Productos();
+        ValorInventario = 0;
     }
 
     private void Buscar()
     {
-        if(Producto.ProductoId > 0)
+        if (Producto.ProductoId > 0)
         {
             var encontrado = ProductosBLL.Buscar(Producto.ProductoId);
 
             if (encontrado != null)
+            {
                 this.Producto = encontrado;
+                ValorInventario = this.Producto.Costo * this.Producto.Existencia;
+            }
             else
                 toastService.ShowWarning("No encontrado");
         }
+
     }
+
 
     private void Guardar()
     {
