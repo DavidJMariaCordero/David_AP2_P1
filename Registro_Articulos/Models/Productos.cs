@@ -19,7 +19,6 @@ namespace Registro_Articulos.Models
 
         [Required(ErrorMessage = "Debe introducir el costo del producto")]
         public double Costo { get; set; }
-        public double ValorInventario { get; set; }
 
     }
 }
